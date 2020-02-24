@@ -9,6 +9,8 @@ import (
 	"syscall"
 )
 
+//gin_scaffold 脚手架
+
 //GORM: https://gorm.io/zh_CN/docs/index.html
 
 func main()  {
