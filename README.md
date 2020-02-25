@@ -1,3 +1,4 @@
+# README.md文件是一个项目的入门手册，里面介绍了整个项目的使用、功能等等;README至少要写明项目的功能和使用，这是最基本的
 # gin_scaffold
 Gin best practices, gin development scaffolding, too late to explain, get on the bus.
 
@@ -108,7 +109,7 @@ curl 'http://127.0.0.1:8880/demo/bind?name=name&locale=en'
 │   └── demo.go
 ├── dao DB数据访问层
 │   └── demo.go
-├── dto  Bind结构体层
+├── dto  Bind结构体层 (api参数)
 │   └── demo.go
 ├── gin_scaffold.inf.log  info日志
 ├── gin_scaffold.wf.log warning日志
@@ -127,6 +128,7 @@ curl 'http://127.0.0.1:8880/demo/bind?name=name&locale=en'
 ├── router  路由层
 │   ├── httpserver.go
 │   └── route.go
+    └── session.go
 └── tmpl
 ```
 ### 引入轻量级golang类库，支持 mysql、redis、http.client、log、支持多级环境配置、支持链路日志打印

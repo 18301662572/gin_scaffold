@@ -1,3 +1,6 @@
+# toml 配置文件讲解：https://github.com/toml-lang/toml/blob/master/versions/cn/toml-v0.4.0.md
+# Viper 读取配置文件：https://github.com/spf13/viper ；Viper支持JSON，TOML，YAML，HCL，INI，envfile和Java属性文件
+# go-ini 读取配置文件：https://ini.unknwon.io/  https://github.com/go-ini/ini （cfg.Section("paths").Key("data").String()）
 # This is base config
 
 [base]

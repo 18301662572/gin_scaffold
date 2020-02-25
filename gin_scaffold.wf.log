@@ -1,0 +1,2 @@
+[ERROR][2020-02-25T15:54:17.874][log.go:74] _com_redis_failure||method=SET||err=RedisConnFactory_error:default||bind=[redis_key redis_value]||traceid=a9febd7d5e54d2a9232019886cffa2b0||cspanid=||spanid=f7aa6fd430b95ff1
+[ERROR][2020-02-25T15:54:17.874][log.go:74] _com_redis_failure||cspanid=||spanid=f7aa6fd430b95ff1||method=GET||err=RedisConnFactory_error:default||bind=[redis_key]||traceid=a9febd7d5e54d2a9232019886cffa2b0

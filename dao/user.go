@@ -7,6 +7,8 @@ import (
 	"time"
 )
 
+//GORM使用: https://gorm.io/zh_CN/docs/index.html
+
 type User struct {
 	Id       int       `json:"id" orm:"column(id);auto"`
 	Name     string    `json:"name" orm:"column(name);"`
@@ -22,8 +24,7 @@ func (f *User) TableName() string {
 	return "user"
 }
 
-
-func (f *User) Del(c *gin.Context,idSlice []string) error {
+func (f *User) Del(c *gin.Context, idSlice []string) error {
 	err := public.GormPool.SetCtx(public.GetGinTraceContext(c)).Where("id in (?)", idSlice).Delete(&User{}).Error
 	if err != nil {
 		return err
@@ -31,8 +32,7 @@ func (f *User) Del(c *gin.Context,idSlice []string) error {
 	return nil
 }
 
-
-func (f *User) Find(c *gin.Context,id int64) (*User, error) {
+func (f *User) Find(c *gin.Context, id int64) (*User, error) {
 	var user User
 	err := public.GormPool.SetCtx(public.GetGinTraceContext(c)).Where("id = ?", id).First(&user).Error
 	if err != nil {
@@ -41,7 +41,7 @@ func (f *User) Find(c *gin.Context,id int64) (*User, error) {
 	return &user, nil
 }
 
-func (f *User) PageList(c *gin.Context,name string, pageNo int, pageSize int) ([]*User, int64, error) {
+func (f *User) PageList(c *gin.Context, name string, pageNo int, pageSize int) ([]*User, int64, error) {
 	var user []*User
 	var userCount int64
 	//limit offset,pagesize
@@ -63,7 +63,7 @@ func (f *User) PageList(c *gin.Context,name string, pageNo int, pageSize int) ([
 }
 
 func (f *User) Save(c *gin.Context) error {
-	if err:=public.GormPool.SetCtx(public.GetGinTraceContext(c)).Save(f).Error;err!=nil{
+	if err := public.GormPool.SetCtx(public.GetGinTraceContext(c)).Save(f).Error; err != nil {
 		return err
 	}
 	return nil
